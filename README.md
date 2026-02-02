@@ -138,7 +138,7 @@ The website features:
 ├── public/                 # Static assets
 │   ├── favicons/
 │   ├── robots.txt
-│   └── social-media-card.svg
+│   └── social-media-card.png
 ├── scripts/                # Utility scripts
 │   ├── config-i18n.js     # i18n configuration wizard
 │   ├── generate-favicon-ico.js
