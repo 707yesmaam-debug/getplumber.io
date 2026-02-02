@@ -7,7 +7,7 @@ const docsSiteData: DocsSiteData = {
   navSocials: [
     {
       social: "X formerly known as Twitter",
-      link: "https://x.com/getplumber",
+      link: "https://x.com/getplumber_io",
       icon: "tabler/brand-x",
     },
     {
@@ -19,7 +19,7 @@ const docsSiteData: DocsSiteData = {
   footerSocials: [
     {
       social: "X formerly known as Twitter",
-      link: "https://x.com/getplumber",
+      link: "https://x.com/getplumber_io",
       icon: "tabler/brand-x",
     },
     {
