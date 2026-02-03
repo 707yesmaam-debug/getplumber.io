@@ -1,6 +1,6 @@
 # Plumber - Website
 
-![Plumber logo](src/assets/images/site-logo.svg)
+![Plumber logo](src/assets/images/plumber-banner.svg)
 
 **A modern website for Plumber (open-source CI/CD compliance CLI), built with Astro, Tailwind CSS, and React.**
 

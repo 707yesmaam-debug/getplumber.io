@@ -98,7 +98,7 @@
 <pattern id="pattern0_1473_4393" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_1473_4393" transform="scale(0.0104167)"/>
 </pattern>
-<linearGradient id="paint0_linear_1473_4393" x1="-nan" y1="-nan" x2="-nan" y2="-nan" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_1473_4393" x1="448.5" y1="170" x2="510.5" y2="170" gradientUnits="userSpaceOnUse">
 <stop offset="0.235577" stop-color="#003F00"/>
 <stop offset="0.874999" stop-color="#008700"/>
 </linearGradient>
