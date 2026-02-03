@@ -1,5 +1,4 @@
 ---
-// import CategoryCloud from "@components/CategoryCloud/CategoryCloud.astro";
 import { getAllPosts } from "@js/blogUtils";
 import { getLocaleFromUrl } from "@js/localeUtils";
 import BaseLayout from "@layouts/BaseLayout.astro";
@@ -22,9 +21,6 @@ const posts = await getAllPosts(currLocale, true); // exclude archived Plumber r
       <h1 class="h2">Blog posts to help you on your journey</h1>
 
     </div>
-    <!-- <div class="mt-4 flex">
-      <CategoryCloud showCount={false} />
-    </div> -->
     <BlogIndexLayout posts={posts} class="mt-10" />
     <a
     href="/blog/archive"

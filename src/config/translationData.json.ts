@@ -58,9 +58,6 @@ export const textTranslations = {
 export const routeTranslations = {
   en: {
     overviewKey: "overview",
-    categoryKey: "categories",
-    categoryKey2: "categories/*",
-    categoryKey3: "categories",
     blogKey: "blog",
   },
 } as const;

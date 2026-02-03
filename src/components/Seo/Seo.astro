@@ -29,6 +29,7 @@ interface BlogProps extends BaseProps {
   postFrontmatter: CollectionEntry<"blog">["data"];
 }
 
+// Explicitly default to indexable for blog, platform, docs (noindex only for 404 etc.)
 const { type, title, description, image, noindex = false } = Astro.props as GenProps | BlogProps;
 
 let optimizedImage;
