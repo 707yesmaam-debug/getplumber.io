@@ -6,7 +6,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import BlogIndexLayout from "@layouts/BlogIndexLayout2.astro";
 
 const currLocale = getLocaleFromUrl(Astro.url);
-const posts = await getAllPosts(currLocale, true); // exclude archived Plumber releases
+const posts = await getAllPosts(currLocale, true); // exclude archived posts (archive/)
 ---
 
 <BaseLayout
@@ -26,7 +26,7 @@ const posts = await getAllPosts(currLocale, true); // exclude archived Plumber r
     href="/blog/archive"
     class="text-sm text-base-content/60 hover:text-base-content underline md:mt-0 text-right"
   >
-    View Plumber release archive
+    View blog archive
   </a>
   </div>
 </BaseLayout>

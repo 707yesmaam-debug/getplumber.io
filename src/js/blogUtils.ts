@@ -47,8 +47,8 @@ export async function getAllPosts(
     filteredPosts = posts;
   }
 
-  // filter out archived Plumber release posts if excludeArchivedReleases is true
-  // (new Plumber releases will still appear)
+  // filter out archived blog posts if excludeArchivedReleases is true
+  // (posts in archive/ subdirectory are excluded from main blog listing)
   if (excludeArchivedReleases) {
     filteredPosts = filteredPosts.filter((post) => !isArchivedReleasePost(post));
   }
@@ -131,20 +131,20 @@ export function formatPosts(
 
 // --------------------------------------------------------
 /**
- * * returns true if the post is an archived Plumber release post (in releases/ subdirectory)
+ * * returns true if the post is an archived blog post (in archive/ subdirectory)
  * @param post: CollectionEntry<"blog">
- * @returns true if the post is an archived release post, false if not
+ * @returns true if the post is an archived post, false if not
  */
 export function isArchivedReleasePost(post: CollectionEntry<"blog">): boolean {
-  // Check if post ID starts with "releases/" - these are the old Plumber releases
-  return post.id.startsWith("releases/");
+  // Check if post ID is under archive/ (with or without locale prefix)
+  return post.id.startsWith("archive/") || post.id.includes("/archive/");
 }
 
 // --------------------------------------------------------
 /**
- * * get all archived Plumber release posts in a formatted array
+ * * get all archived blog posts (in archive/ subdirectory) in a formatted array
  * @param lang: string (optional) - language to filter by (matching a locale in i18nUtils.ts)
- * @returns all archived release blog posts, filtered for drafts, sorted by date, future posts removed, locale removed from slug, and filtered by language if passed
+ * @returns all archived blog posts, filtered for drafts, sorted by date, future posts removed, locale removed from slug, and filtered by language if passed
  */
 export async function getAllArchivedReleasePosts(
   lang?: (typeof locales)[number],
@@ -162,7 +162,7 @@ export async function getAllArchivedReleasePosts(
     filteredPosts = posts;
   }
 
-  // filter to only archived release posts (old Plumber releases)
+  // filter to only archived posts (in archive/ subdirectory)
   filteredPosts = filteredPosts.filter((post) => isArchivedReleasePost(post));
 
   // filter out future posts and sort by date

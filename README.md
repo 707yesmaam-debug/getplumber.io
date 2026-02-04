@@ -13,6 +13,7 @@
 | [Architecture & Technology Stack](#️-architecture--technology-stack) |
 | [Project Structure](#-project-structure) |
 | [Creating Content](#️-creating-content) |
+| [Adding a new release blog post](#6-adding-a-new-release-blog-post) |
 | [Creating Documentation Articles](#-creating-documentation-articles) |
 | [Creating Custom Pages](#-creating-custom-pages) |
 | [Component Patterns](#-component-patterns) |
@@ -299,10 +300,44 @@ import CustomComponent from '@components/CustomComponent.astro';
 <CustomComponent prop="value" />
 ```
 
-#### 6. Examples
+#### 6. Adding a new release blog post
+
+To announce a new product release (e.g. **1.0.0 Plumber**), add a post under the **`releases/`** directory. These posts appear on the main blog page and in the RSS feed.
+
+**Where to add it:** `src/data/blog/[locale]/releases/[version]/`
+
+Example for release "1.0.0 Plumber":
+
+```
+src/data/blog/en/releases/1.0.0/
+├── index.mdx          # Release notes content
+├── heroImage.png      # Hero image (required)
+└── screenshot.png     # Optional screenshots
+```
+
+Use the same frontmatter as any blog article. Include a `Releases` category so it’s easy to filter:
+
+```mdx
+---
+title: 1.0.0 Plumber Release
+description: Short description for SEO and previews
+draft: false
+authors:
+  - plumber
+pubDate: 2025-02-04
+heroImage: ./heroImage.png
+categories:
+  - "Releases"
+---
+```
+
+**Note:** Posts in **`archive/`** are *archived*: they only appear on [/blog/archive](/blog/archive), not on the main blog list. Use **`releases/`** for new release announcements and keep **`archive/`** for old/historical release notes (e.g. legacy R2Devops releases).
+
+#### 7. Examples
 
 See existing blog posts in `src/data/blog/en/` for reference:
-- `releases/2.17/index.mdx` - Release notes
+- `archive/2.17/index.mdx` - Archived release notes (R2Devops)
+- `releases/` - Add new Plumber release posts here
 - `tj-actions-compromised/index.mdx` - Article example
 - `top-5-cybersecurity-incidents-in-cicd/index.mdx` - Long-form article
 
